@@ -4,7 +4,6 @@ import PlacesList from './PlacesList';
 import Weapons from './Weapons';
 import Pseudo from './Pseudo';
 import Age from './Age';
-import Weapons from './Weapon';
 import Chantier from './Chantier';
 import './App.css';
 
