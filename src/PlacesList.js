@@ -100,7 +100,6 @@ class PlacesList extends Component {
     yo = yo.slice(0, yo.indexOf('e'))
     yo= yo.padStart(5, '7500');
     this.setState({placeOfliving: yo});
-    console.log('PLACEOFLIVING', this.state.placeOfliving)
   }
 
   render() {
@@ -117,16 +116,19 @@ class PlacesList extends Component {
    
     return (
       <div>
+        
         <form onSubmit={this.handleSubmit}>
           <input
             id="placeOfliving" 
+            
             type="text" 
             aria-label={this.props.placeholder}
             ref={(ref) => { this.autocompleteElem = ref; }}
             {...inputProps}/>
-          <input type="submit" value="Submit" />
+          <input className="submitbutton" type="submit" value="Confirme Mémé" />
         </form>
         <Chantier arrondissement={this.state.placeOfliving} />
+      
       </div>
     );
   }
