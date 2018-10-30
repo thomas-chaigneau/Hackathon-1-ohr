@@ -25,14 +25,14 @@ class Chantier extends Component {
             console.log("loading")
         else{
             let tutu = this.state.localisation[Math.floor(Math.random()*this.state.localisation.length)];
-            console.log(tutu.fields.voie)
+            return tutu = tutu.fields.voie
         }
         console.log('PROPS', this.props)    
         
        //console.log(tutu.fields);
         return (
             <div>
-                {
+                { <p>{this.tutu}</p>
                     /*this.state.localisation.map(
                         (element, index) =>
                             <div key={index}>
