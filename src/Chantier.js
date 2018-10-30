@@ -8,7 +8,7 @@ class Chantier extends Component {
     }
 
     getPlacesChantier = () => {
-        const arrondissement = '75012'
+        let arrondissement = this.props.arrondissement
         //console.log('tutu', `${arrondissement}`)
         axios
             .get(`https://opendata.paris.fr/api/records/1.0/search/?dataset=chantiers-perturbants&q=${arrondissement}&rows=10&sort=cp_arrondissement`)
@@ -28,7 +28,7 @@ class Chantier extends Component {
             let tutu = this.state.localisation[Math.floor(Math.random()*this.state.localisation.length)];
             console.log(tutu.fields.voie)
         }
-            
+        console.log('PROPS', this.props)    
         
        //console.log(tutu.fields);
         return (
