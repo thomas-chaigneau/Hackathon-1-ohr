@@ -62,6 +62,8 @@ class PlacesList extends Component {
     options: {},
   };
 
+  
+
   componentDidMount() {
     this.autocomplete = Places({
       ...this.props.options,
