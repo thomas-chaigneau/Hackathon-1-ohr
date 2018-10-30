@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
+// import CarteDeChasse from './CarteDeChasse';
 
 class Chantier extends Component {
 
@@ -44,6 +45,7 @@ class Chantier extends Component {
                                     <h2>{element.fields.voie}</h2>
                                     <h4>{element.fields.cp_arrondissement}</h4>
                                 </div>)}  
+                    {/* <CarteDeChasse huntplace={this.state.localisation.filter(item => item.fields.cp_arrondissement = this.props.arrondissement).filter((item, id) => id === alea)} /> */}
                 </div>
             )
         }
