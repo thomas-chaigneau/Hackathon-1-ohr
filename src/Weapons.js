@@ -42,6 +42,7 @@ class Weapons extends React.Component {
 				? (
 				<div className="menu">
 					<button>Sable</button>
+					<button>Marionette</button>
 					<button>Couteau à beurre</button>
 					<button>Lance-pierres</button>
 					<button>Martinet</button>
