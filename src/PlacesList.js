@@ -6,7 +6,7 @@ import Places from 'places.js';
 class PlacesList extends Component {
   constructor(props) {
     super(props);
-    this.state = {placeOfliving: ""};
+    this.state = {placeOfliving: "", isLoaded : false};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

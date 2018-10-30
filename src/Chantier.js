@@ -14,7 +14,8 @@ class Chantier extends Component {
             .then(response => this.setState({ localisation: response.data.records }))
     }
 
-    componentDidMount = () => {
+    
+    componentDidMount () {
         this.getPlacesChantier()
     }
 
