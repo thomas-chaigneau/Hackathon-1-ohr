@@ -92,12 +92,13 @@ class PlacesList extends Component {
       .forEach(({ eventName }) => this.autocomplete.removeAllListeners(eventName));
   }
 
-
   handleSubmit(event) {
     event.preventDefault()
-    this.setState({placeOfliving: this.autocompleteElem.value.split(', ')})
-    console.log(this.autocompleteElem.value); 
-    console.log(this.state.placeOfliving);
+    let yo = this.autocompleteElem.value
+    yo = yo.split(', ')[1].split(' ')[1]
+    yo = yo.slice(0, yo.indexOf('e'))
+    yo= yo.padStart(5, '7500');
+    this.setState({placeOfliving: yo});
   }
 
   render() {
