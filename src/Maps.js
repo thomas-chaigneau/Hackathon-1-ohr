@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-//import L from 'leaflet'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
-import './Map.css'
+import React, { Component } from 'react';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import './Map.css';
 
 class Maps extends Component {
     state = {
@@ -10,21 +9,8 @@ class Maps extends Component {
         zoom: 15
     }
 
-    // componentWillMount() {
-    //     this.setState({lat: this.props.huntplace.fields.geo_point_2d[0]})
-    // }
-
     render() {
-        console.log(this.props)
         const coordonate = this.props.huntplace
-        console.log('lati',coordonate.fields.geo_point_2d[0])
-        console.log('long',coordonate.fields.geo_point_2d[1])
-        console.log('long',coordonate.fields.cp_arrondissement)
-        // .fields.geo_point_2d
-        // console.log(coordonate[0])
-        // console.log(coordonate.fields.geo_point_2d[0])
-        // console.log(coordonate.fields.geo_point_2d[0])
-        // const { huntplace } = this.props;
         const position = [coordonate.fields.geo_point_2d[0], coordonate.fields.geo_point_2d[1]]
         return (
             <div className='Map-container'>
