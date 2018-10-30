@@ -125,8 +125,7 @@ class PlacesList extends Component {
         
         <form onSubmit={this.handleSubmit}>
           <input
-            id="placeOfliving" 
-            
+            id="placeOfliving"
             type="text" 
             aria-label={this.props.placeholder}
             ref={(ref) => { this.autocompleteElem = ref; }}
