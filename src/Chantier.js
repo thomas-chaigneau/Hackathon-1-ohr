@@ -8,10 +8,8 @@ class Chantier extends Component {
     }
 
     getPlacesChantier = () => {
-        let arrondissement = this.props.arrondissement
         axios
-            .get(`https://opendata.paris.fr/api/records/1.0/search/?dataset=chantiers-perturbants&q=${arrondissement}&rows=10&sort=cp_arrondissement`)
-            //.then(response => console.log(response.data.records))
+            .get(`https://opendata.paris.fr/api/records/1.0/search/?dataset=chantiers-perturbants&rows=400`)
             .then(response => this.setState({ localisation: response.data.records }))
     }
 
@@ -20,19 +18,10 @@ class Chantier extends Component {
     }
 
     render() {
-        
-        if(this.state.localisation.length === 0)
-            console.log("loading")
-        else{
-            let tutu = this.state.localisation[Math.floor(Math.random()*this.state.localisation.length)];
-            return tutu = tutu.fields.voie
-        }
-        console.log('PROPS', this.props)    
-        
-       //console.log(tutu.fields);
+        if(this.props.arrondissement === '')
         return (
-            <div>
-                { <p>{this.tutu}</p>
+            <div>place is comming....
+                { 
                     /*this.state.localisation.map(
                         (element, index) =>
                             <div key={index}>
@@ -43,7 +32,21 @@ class Chantier extends Component {
                     }
             </div>
         )
+
+        else {
+            let alea = Math.floor(Math.random()*this.state.localisation.length);
+            // tutu = tutu.fields.voie
+            return (
+                <div> 
+                    {this.state.localisation.filter(item => item.fields.cp_arrondissement = this.props.arrondissement).filter((item, id) => id === alea).map(
+                            (element, index) =>
+                                <div key={index}>
+                                    <h2>{element.fields.voie}</h2>
+                                    <h4>{element.fields.cp_arrondissement}</h4>
+                                </div>)}  
+                </div>
+            )
+        }
     }
 }
-
 export default Chantier

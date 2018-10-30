@@ -95,11 +95,17 @@ class PlacesList extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
+    if (this.autocompleteElem.value !== '') {
     let yo = this.autocompleteElem.value
     yo = yo.split(', ')[1].split(' ')[1]
     yo = yo.slice(0, yo.indexOf('e'))
     yo= yo.padStart(5, '7500');
     this.setState({placeOfliving: yo});
+    } else {
+      let yo = '75016'
+      this.setState({placeOfliving: yo});
+    }
+  
   }
 
   render() {
@@ -125,7 +131,7 @@ class PlacesList extends Component {
             aria-label={this.props.placeholder}
             ref={(ref) => { this.autocompleteElem = ref; }}
             {...inputProps}/>
-          <input className="submitbutton" type="submit" value="Confirme Mémé" />
+          <input className="submitbutton" type="submit" value="Trouver un lieux de chasse" />
         </form>
         <Chantier arrondissement={this.state.placeOfliving} />
       
