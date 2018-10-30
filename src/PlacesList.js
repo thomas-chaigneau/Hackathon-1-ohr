@@ -1,35 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Chantier from './Chantier';
 import Places from 'places.js';
-import Chantier from './Chantier.js'
 
 class PlacesList extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
-      this.state = {placeOfliving: ""};
-      this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {placeOfliving: ""};
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   static propTypes = {
-    /** Placeholder for input field. */
     placeholder: PropTypes.string,
     /* eslint-disable react/no-unused-prop-types */
-    /** https://community.algolia.com/places/documentation.html#api-events-cursorchanged */
     onCursorChanged: PropTypes.func,
-    /** https://community.algolia.com/places/documentation.html#api-events-suggestions */
     onSuggestions: PropTypes.func,
-    /** https://community.algolia.com/places/documentation.html#api-events-change */
     onChange: PropTypes.func,
-    /** https://community.algolia.com/places/documentation.html#api-events-clear */
     onClear: PropTypes.func,
-    /** https://community.algolia.com/places/documentation.html#api-events-limit */
     onLimit: PropTypes.func,
-    /** https://community.algolia.com/places/documentation.html#api-events-error */
     onError: PropTypes.func,
-    /** https://community.algolia.com/places/documentation.html#options */
     options: PropTypes.shape({
       type: PropTypes.oneOf([
-        'Paris',
+        'city',
         'country',
         'address',
         'busStop',
@@ -61,14 +53,14 @@ class PlacesList extends Component {
   };
 
   static defaultProps = {
-    placeholder: 'Ton adresse, vieux con',
+    placeholder: 'Ton adresse, Vieux con',
     onCursorChanged: null,
     onSuggestions: null,
     onChange: null,
     onClear: null,
     onLimit: null,
     onError: null,
-    options: {city : "Paris"},
+    options: {},
   };
 
   componentDidMount() {
@@ -93,7 +85,7 @@ class PlacesList extends Component {
   }
 
   shouldComponentUpdate() {
-    return false;
+    return true;
   }
 
   componentWillUnmount() {
@@ -101,8 +93,23 @@ class PlacesList extends Component {
       .forEach(({ eventName }) => this.autocomplete.removeAllListeners(eventName));
   }
 
+  handleSubmit(event) {
+    event.preventDefault()
+    if (this.autocompleteElem.value !== '') {
+    let yo = this.autocompleteElem.value
+    yo = yo.split(', ')[1].split(' ')[1]
+    yo = yo.slice(0, yo.indexOf('e'))
+    yo= yo.padStart(5, '7500');
+    this.setState({placeOfliving: yo});
+    } else {
+      let yo = '75016'
+      this.setState({placeOfliving: yo});
+    }
+  
+  }
+
   render() {
-      console.log(Places)
+    console.log('placeOfliving',this.state.placeOfliving)
     const {
       onChange,
       onClear,
@@ -113,7 +120,7 @@ class PlacesList extends Component {
       options,
       ...inputProps
     } = this.props;
-
+   
     return (
       <div>
         
@@ -133,4 +140,4 @@ class PlacesList extends Component {
   }
 }
 
-export default PlacesList
+export default PlacesList;
