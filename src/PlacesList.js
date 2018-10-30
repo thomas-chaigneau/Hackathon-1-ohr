@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Places from 'places.js';
+import Chantier from './Chantier.js'
 
-export default class PlacesList extends React.Component {
+class PlacesList extends Component {
+
+  constructor(props){
+    super(props);
+      this.state = {placeOfliving: ""};
+      this.handleSubmit = this.handleSubmit.bind(this);
+  }
   static propTypes = {
     /** Placeholder for input field. */
     placeholder: PropTypes.string,
@@ -109,13 +116,21 @@ export default class PlacesList extends React.Component {
 
     return (
       <div>
-        <input
-          type="text"
-          aria-label={this.props.placeholder}
-          ref={(ref) => { this.autocompleteElem = ref; }}
-          {...inputProps}
-        />
+        
+        <form onSubmit={this.handleSubmit}>
+          <input
+            id="placeOfliving"
+            type="text" 
+            aria-label={this.props.placeholder}
+            ref={(ref) => { this.autocompleteElem = ref; }}
+            {...inputProps}/>
+          <input className="submitbutton" type="submit" value="Trouver un lieux de chasse" />
+        </form>
+        <Chantier arrondissement={this.state.placeOfliving} />
+      
       </div>
     );
   }
 }
+
+export default PlacesList
