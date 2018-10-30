@@ -22,17 +22,16 @@ class Pseudo extends Component {
       render() {
         return (
             <div>
-    
               <form onSubmit={this.handleSubmit}>
-                <label htmlFor="name"> Your Pseudo</label>
                 <input 
-                    id="name" 
+                    id="name"
+                    className="form" 
                     type="text" 
                     value={this.state.value} 
-                    onChange={this.handleChange}/>
-                <input type="submit" value="Submit" />
+                    onChange={this.handleChange}
+                    placeholder="    Ton PSeudo de Guerre Vieille PEaux"/>
+                <input className="submitbutton" type="submit" value="Envoie le paté Pépé" />
               </form>
-    
           <h1>{this.state.name}</h1></div>
         );
       }
