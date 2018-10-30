@@ -64,6 +64,8 @@ export default class PlacesList extends React.Component {
     options: {city : "Paris"},
   };
 
+  
+
   componentDidMount() {
     this.autocomplete = Places({
       ...this.props.options,

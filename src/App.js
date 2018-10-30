@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PlacesList from './PlacesList';
-import Pseudo from './Pseudo';
-import Age from './Age';
-import Weapon from './Weapon';
+// import Pseudo from './Pseudo';
+// import Age from './Age';
+import Weapons from './Weapons';
 import './App.css';
 
 class App extends Component {
@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <PlacesList />
-        <Pseudo />
-        <Age />
+        {/* <Pseudo />
+        <Age /> */}
         <Weapon />
         
       </div>
