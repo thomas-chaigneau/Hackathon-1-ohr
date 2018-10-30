@@ -6,7 +6,7 @@ import Places from 'places.js';
 class PlacesList extends Component {
   constructor(props) {
     super(props);
-    this.state = {placeOfliving: ""};
+    this.state = {placeOfliving: "", isLoaded : false};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -125,8 +125,7 @@ class PlacesList extends Component {
         
         <form onSubmit={this.handleSubmit}>
           <input
-            id="placeOfliving" 
-            
+            id="placeOfliving"
             type="text" 
             aria-label={this.props.placeholder}
             ref={(ref) => { this.autocompleteElem = ref; }}

@@ -4,6 +4,7 @@ import PlacesList from './PlacesList';
 import Weapons from './Weapons';
 import Pseudo from './Pseudo';
 import Age from './Age';
+import Maps from './Maps';
 import './style/App.css';
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
           <Pseudo />
           <Age />
           <Weapons /> 
+          {/* <Maps /> */}
         </div>
       </div>
     );
