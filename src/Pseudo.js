@@ -24,14 +24,14 @@ class Pseudo extends Component {
             <div>
     
               <form onSubmit={this.handleSubmit}>
-    
                 <label htmlFor="name"> Your Pseudo</label>
-    
-                <input id="name" type="text" value={this.state.value} onChange={this.handleChange}/>
-    
+                <input 
+                    id="name" 
+                    type="text" 
+                    value={this.state.value} 
+                    onChange={this.handleChange}/>
                 <input type="submit" value="Submit" />
               </form>
-    
     
           <h1>{this.state.name}</h1></div>
         );
