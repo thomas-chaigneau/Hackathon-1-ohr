@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import PlacesList from './PlacesList';
+
+import Weapons from './Weapons';
 import Pseudo from './Pseudo';
 import Age from './Age';
-import Weapon from './Weapon';
-import Chantier from './Chantier';
 
 import './App.css';
 
 class App extends Component {
   render() {
     return (
+
       <div>
         <PlacesList options={{
           appId: "plDJWR60RSUR",
@@ -24,9 +25,9 @@ class App extends Component {
         }} />
         <Pseudo />
         <Age />
-        <Weapon /> 
-        <Chantier />
-       
+
+        <Weapons /> 
+
       </div>
     );
   }
