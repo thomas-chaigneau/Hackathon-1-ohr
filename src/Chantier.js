@@ -20,11 +20,7 @@ class Chantier extends Component {
     }
 
     render() {
-        if(this.props.arrondissement === '')
-        return (
-            <div>place is comming....</div>
-        )
-
+        if(this.props.arrondissement === '') return (<div>place is comming....</div>)
         else {
                 let alea = Math.floor(Math.random()*this.state.localisation.length);
                 return (

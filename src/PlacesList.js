@@ -6,7 +6,7 @@ import Places from 'places.js';
 class PlacesList extends Component {
   constructor(props) {
     super(props);
-    this.state = {placeOfliving: "", isLoaded : false};
+    this.state = {placeOfliving: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -109,6 +109,7 @@ class PlacesList extends Component {
   }
 
   render() {
+    console.log('placeOfliving',this.state.placeOfliving)
     const {
       onChange,
       onClear,
