@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Places from 'places.js';
 
-export default class PlacesList extends React.Component {
+class PlacesList extends Component {
   static propTypes = {
     /** Placeholder for input field. */
     placeholder: PropTypes.string,
@@ -61,7 +61,7 @@ export default class PlacesList extends React.Component {
     onClear: null,
     onLimit: null,
     onError: null,
-    options: {city : "Paris"},
+    options: {},
   };
 
   componentDidMount() {
@@ -95,7 +95,6 @@ export default class PlacesList extends React.Component {
   }
 
   render() {
-      console.log(Places)
     const {
       onChange,
       onClear,
@@ -119,3 +118,6 @@ export default class PlacesList extends React.Component {
     );
   }
 }
+
+
+export default PlacesList;
