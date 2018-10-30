@@ -48,7 +48,7 @@ class Weapons extends React.Component {
 					<button>Dague</button>
 					<button>Réplique d'épée médiévale</button>
 					<button>Piège à loup</button>
-					<button>Fusil d'assault silencieux</button>
+					<button>Fusil d'assaut silencieux</button>
 				</div>
 				) 
 				: (
