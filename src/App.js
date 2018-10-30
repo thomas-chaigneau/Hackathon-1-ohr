@@ -12,7 +12,7 @@ class App extends Component {
         <PlacesList />
         {/* <Pseudo />
         <Age /> */}
-        <Weapon />
+        <Weapons />
         
       </div>
     );

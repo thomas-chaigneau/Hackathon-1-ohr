@@ -1,5 +1,4 @@
 import React from 'react';
-import Select from 'react-select';
 
 class Weapons extends React.Component {
 
