@@ -6,7 +6,7 @@ import Places from 'places.js';
 class PlacesList extends Component {
   constructor(props) {
     super(props);
-    this.state = {placeOfliving: ""};
+    this.state = {placeOfliving: "", isLoaded : false};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -99,7 +99,7 @@ class PlacesList extends Component {
     yo = yo.split(', ')[1].split(' ')[1]
     yo = yo.slice(0, yo.indexOf('e'))
     yo= yo.padStart(5, '7500');
-    this.setState({placeOfliving: yo});
+    this.setState({placeOfliving: yo, isLoaded: true});
     console.log('PLACEOFLIVING', this.state.placeOfliving)
   }
 
@@ -126,7 +126,7 @@ class PlacesList extends Component {
             {...inputProps}/>
           <input type="submit" value="Submit" />
         </form>
-        <Chantier arrondissement={this.state.placeOfliving} />
+        {this.state.isLoaded && <Chantier arrondissement={this.state.placeOfliving} />}
       </div>
     );
   }

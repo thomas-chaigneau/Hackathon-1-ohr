@@ -4,33 +4,36 @@ import PlacesList from './PlacesList';
 import Weapons from './Weapons';
 import Pseudo from './Pseudo';
 import Age from './Age';
+import Maps from './Maps';
+
 
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
+    render() {
+        return (
 
-      <div>
-        <PlacesList options={{
-          appId: "plDJWR60RSUR",
-          apiKey: "4c54577cf398c44f9baef26dff187f04",
-          language: "fr",
-          countries: ["fr"],
-          type: "address",
-          insideBoundingBox: "48.896, 2.394, 48.84, 2.25",
-          useDeviceLocation: false,
-          aroundLatLngViaIP: false
-          // Other options from https://community.algolia.com/places/documentation.html#options
-        }} />
-        <Pseudo />
-        <Age />
+            <div>
+                <PlacesList options={{
+                    appId: "plDJWR60RSUR",
+                    apiKey: "4c54577cf398c44f9baef26dff187f04",
+                    language: "fr",
+                    countries: ["fr"],
+                    type: "address",
+                    insideBoundingBox: "48.896, 2.394, 48.84, 2.25",
+                    useDeviceLocation: false,
+                    aroundLatLngViaIP: false
+                    // Other options from https://community.algolia.com/places/documentation.html#options
+                }} />
+                <Pseudo />
+                <Age />
 
-        <Weapons /> 
+                <Weapons />
+                <Maps />
 
-      </div>
-    );
-  }
+            </div>
+        );
+    }
 }
 
 export default App;

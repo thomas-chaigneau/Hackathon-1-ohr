@@ -6,34 +6,33 @@ class Chantier extends Component {
     state = {
         localisation: []
     }
-
-    getPlacesChantier = () => {
+   
+    getPlacesChantier()  {
         let arrondissement = this.props.arrondissement
-        //console.log('tutu', `${arrondissement}`)
+
         axios
             .get(`https://opendata.paris.fr/api/records/1.0/search/?dataset=chantiers-perturbants&q=${arrondissement}&rows=10&sort=cp_arrondissement`)
             //.then(response => console.log(response.data.records))
             .then(response => this.setState({ localisation: response.data.records }))
     }
 
-    componentDidMount = () => {
+    
+    componentDidMount () {
+        console.log(this.props);
         this.getPlacesChantier()
     }
 
     render() {
         
         if(this.state.localisation.length === 0)
-            console.log("loading")
-        else{
-            let tutu = this.state.localisation[Math.floor(Math.random()*this.state.localisation.length)];
-            return tutu = tutu.fields.voie
-        }
-        console.log('PROPS', this.props)    
+            return (<div>LOADING</div>)
+    
+        const tutu = this.state.localisation[Math.floor(Math.random()*this.state.localisation.length)];
         
        //console.log(tutu.fields);
         return (
             <div>
-                { <p>{this.tutu}</p>
+                { <p>{tutu.fields.voie}</p>
                     /*this.state.localisation.map(
                         (element, index) =>
                             <div key={index}>
