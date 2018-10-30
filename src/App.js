@@ -4,7 +4,6 @@ import PlacesList from './PlacesList';
 import Weapons from './Weapons';
 import Pseudo from './Pseudo';
 import Age from './Age';
-import Chantier from './Chantier';
 import './App.css';
 
 class App extends Component {
@@ -26,7 +25,6 @@ class App extends Component {
         <Pseudo />
         <Age />
         <Weapons /> 
-        <Chantier />
       </div>
     );
   }

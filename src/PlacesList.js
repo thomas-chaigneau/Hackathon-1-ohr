@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Chantier from './Chantier';
 import Places from 'places.js';
 
 class PlacesList extends Component {
@@ -62,8 +63,6 @@ class PlacesList extends Component {
     options: {},
   };
 
-  
-
   componentDidMount() {
     this.autocomplete = Places({
       ...this.props.options,
@@ -86,7 +85,7 @@ class PlacesList extends Component {
   }
 
   shouldComponentUpdate() {
-    return false;
+    return true;
   }
 
   componentWillUnmount() {
@@ -101,6 +100,7 @@ class PlacesList extends Component {
     yo = yo.slice(0, yo.indexOf('e'))
     yo= yo.padStart(5, '7500');
     this.setState({placeOfliving: yo});
+    console.log('PLACEOFLIVING', this.state.placeOfliving)
   }
 
   render() {
@@ -114,7 +114,7 @@ class PlacesList extends Component {
       options,
       ...inputProps
     } = this.props;
-
+   
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -126,6 +126,7 @@ class PlacesList extends Component {
             {...inputProps}/>
           <input type="submit" value="Submit" />
         </form>
+        <Chantier arrondissement={this.state.placeOfliving} />
       </div>
     );
   }
