@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Maps from './Maps';
 
 class Chantier extends Component {
 
@@ -36,7 +37,7 @@ class Chantier extends Component {
 
         else {
             let alea = Math.floor(Math.random()*this.state.localisation.length);
-            // tutu = tutu.fields.voie
+            console.log(this.state.localisation)
             return (
                 <div> 
                     {this.state.localisation.filter(item => item.fields.cp_arrondissement = this.props.arrondissement).filter((item, id) => id === alea).map(
@@ -44,7 +45,8 @@ class Chantier extends Component {
                                 <div key={index}>
                                     <h2>{element.fields.voie}</h2>
                                     <h4>{element.fields.cp_arrondissement}</h4>
-                                </div>)}  
+                                </div>)}
+                                <Maps />
                 </div>
             )
         }

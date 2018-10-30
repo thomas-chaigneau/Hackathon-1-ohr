@@ -1,27 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Chantier from './Chantier';
 import Places from 'places.js';
 
-class PlacesList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {placeOfliving: "", isLoaded : false};
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
+export default class PlacesList extends React.Component {
   static propTypes = {
+    /** Placeholder for input field. */
     placeholder: PropTypes.string,
     /* eslint-disable react/no-unused-prop-types */
+    /** https://community.algolia.com/places/documentation.html#api-events-cursorchanged */
     onCursorChanged: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-suggestions */
     onSuggestions: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-change */
     onChange: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-clear */
     onClear: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-limit */
     onLimit: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-error */
     onError: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#options */
     options: PropTypes.shape({
       type: PropTypes.oneOf([
-        'city',
+        'Paris',
         'country',
         'address',
         'busStop',
@@ -53,14 +54,14 @@ class PlacesList extends Component {
   };
 
   static defaultProps = {
-    placeholder: 'Ton adresse, Vieux con',
+    placeholder: 'Ton adresse, vieux con',
     onCursorChanged: null,
     onSuggestions: null,
     onChange: null,
     onClear: null,
     onLimit: null,
     onError: null,
-    options: {},
+    options: {city : "Paris"},
   };
 
   componentDidMount() {
@@ -85,7 +86,7 @@ class PlacesList extends Component {
   }
 
   shouldComponentUpdate() {
-    return true;
+    return false;
   }
 
   componentWillUnmount() {
@@ -93,22 +94,8 @@ class PlacesList extends Component {
       .forEach(({ eventName }) => this.autocomplete.removeAllListeners(eventName));
   }
 
-  handleSubmit(event) {
-    event.preventDefault()
-    if (this.autocompleteElem.value !== '') {
-    let yo = this.autocompleteElem.value
-    yo = yo.split(', ')[1].split(' ')[1]
-    yo = yo.slice(0, yo.indexOf('e'))
-    yo= yo.padStart(5, '7500');
-    this.setState({placeOfliving: yo});
-    } else {
-      let yo = '75016'
-      this.setState({placeOfliving: yo});
-    }
-  
-  }
-
   render() {
+      console.log(Places)
     const {
       onChange,
       onClear,
@@ -119,25 +106,16 @@ class PlacesList extends Component {
       options,
       ...inputProps
     } = this.props;
-   
+
     return (
       <div>
-        
-        <form onSubmit={this.handleSubmit}>
-          <input
-            id="placeOfliving" 
-            
-            type="text" 
-            aria-label={this.props.placeholder}
-            ref={(ref) => { this.autocompleteElem = ref; }}
-            {...inputProps}/>
-          <input className="submitbutton" type="submit" value="Trouver un lieux de chasse" />
-        </form>
-        <Chantier arrondissement={this.state.placeOfliving} />
-      
+        <input
+          type="text"
+          aria-label={this.props.placeholder}
+          ref={(ref) => { this.autocompleteElem = ref; }}
+          {...inputProps}
+        />
       </div>
     );
   }
 }
-
-export default PlacesList;
