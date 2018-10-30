@@ -22,7 +22,7 @@ export default class PlacesList extends React.Component {
     /** https://community.algolia.com/places/documentation.html#options */
     options: PropTypes.shape({
       type: PropTypes.oneOf([
-        'Paris',
+        'city',
         'country',
         'address',
         'busStop',
