@@ -1,65 +1,156 @@
 import React from 'react';
 import './style/App.css';
+import Profilgamer from './Profilgamer'
 
 class Weapons extends React.Component {
 
+	/*	constructor() {
+			super();
+	
+	
+			this.state = {
+				showMenu: false,
+				imgSrc: null
+			}
+	
+		}*/
+	
+	
+		showMenu = () => {
+			this.setState({ showMenu: !this.state.showMenu })
+		}
+	
+		loadSable = () => {
+			this.setState({ imgSrc: './img/sand.png' })
+		}
+	
+	/*	loadMarionette = () => {
+			this.setState({ imgSrc: './img/marionette.jpg' })
+		}
+	
+		loadCouteau = () => {
+			this.setState({ imgSrc: './img/couteau-beurre.jpg' })
+		}
+	
+		loadLancePierres = () => {
+			this.setState({ imgSrc: './img/lance-pierre.jpg' })
+		}
+	
+		loadMartinet = () => {
+			this.setState({ imgSrc: './img/martinet.jpg' })
+		}
+	
+		loadDague = () => {
+			this.setState({ imgSrc: './img/dague.jpg' })
+		}
+	
+		loadEpee = () => {
+			this.setState({ imgSrc: './img/epee.jpg' })
+		}
+	
+		loadPiege = () => {
+			this.setState({ imgSrc: './img/piege-a-loups.jpg' })
+		}
+	
+		loadFusil = () => {
+			this.setState({ imgSrc: './img/fusil.jpg' })
+		}*/
 	constructor() {
 		super();
-	
-
 		this.state = {
-		  showMenu: false,
-		  imgSrc: null
-		}
-
+			selectedOption: 'ARmes',
+			validateOption: ''
+		};
+		this.handleOptionChange = this.handleOptionChange.bind(this);
+		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 	}
 
-	
-	showMenu = () => {
-		this.setState({showMenu: !this.state.showMenu})
-	}
+	handleOptionChange(event) {
+		this.setState({ selectedOption: event.target.value });
+	};
 
-	loadSable = () => {
-		this.setState({imgSrc: './img/sand.png'})
-	}
-
-	loadMarionette = () => {
-		this.setState({imgSrc: './img/marionette.jpg'})
-	}
-
-	loadCouteau = () => {
-		this.setState({imgSrc: './img/couteau-beurre.jpg'})
-	}
-
-	loadLancePierres = () => {
-		this.setState({imgSrc: './img/lance-pierre.jpg'})
-	}
-
-	loadMartinet = () => {
-		this.setState({imgSrc: './img/martinet.jpg'})
-	}
-
-	loadDague = () => {
-		this.setState({imgSrc: './img/dague.jpg'})
-	}
-
-	loadEpee = () => {
-		this.setState({imgSrc: './img/epee.jpg'})
-	}
-
-	loadPiege = () => {
-		this.setState({imgSrc: './img/piege-a-loups.jpg'})
-	}
-
-	loadFusil = () => {
-		this.setState({imgSrc: './img/fusil.jpg'})
+	handleFormSubmit(event) {
+		event.preventDefault();
+		this.setState({ validateOption: this.state.selectedOption });
 	}
 
 	render() {
 
 
-		return(
+		return (
+
+
 			<div>
+				<form onSubmit={this.handleFormSubmit}>
+					<div>
+						<label>
+							<input type="radio" value="Sable" checked={this.state.selectedOption === 'Sable'} onChange={this.handleOptionChange} />
+							Sable
+                  		</label>
+					</div>
+					<div>
+						<label>
+							<input type="radio" value="Marionette" checked={this.state.selectedOption === 'Marionette'} onChange={this.handleOptionChange} />
+							Marionette
+                  		</label>
+					</div>
+					<div>
+						<label>
+							<input type="radio" value="Couteau à beurre" checked={this.state.selectedOption === 'Couteau à beurre'} onChange={this.handleOptionChange} />
+							Couteau à beurre
+                  		</label>
+					</div>
+					<div>
+						<label>
+							<input type="radio" value="Lance-pierres" checked={this.state.selectedOption === 'Lance-pierres'} onChange={this.handleOptionChange} />
+							Lance-pierres
+                  		</label>
+					</div>
+					<div>
+						<label>
+							<input type="radio" value="Martinet" checked={this.state.selectedOption === 'Martinet'} onChange={this.handleOptionChange} />
+							Martinet
+                  		</label>
+					</div>
+					<div>
+						<label>
+							<input type="radio" value="Dague" checked={this.state.selectedOption === 'Dague'} onChange={this.handleOptionChange} />
+							Dague
+                  		</label>
+					</div>
+					<div>
+						<label>
+							<input type="radio" value="Epée" checked={this.state.selectedOption === 'Epée'} onChange={this.handleOptionChange} />
+							Epée
+                  		</label>
+					</div>
+					<div>
+						<label>
+							<input type="radio" value="Piège à loup" checked={this.state.selectedOption === 'Piège à loup'} onChange={this.handleOptionChange} />
+							Piège à loup
+                  		</label>
+					</div>
+					<div>
+						<label>
+							<input type="radio" value="Fusil d'assaut" checked={this.state.selectedOption === 'Fusil d\'assaut'} onChange={this.handleOptionChange} />
+							Fusil d'assaut
+                  		</label>
+					</div>
+
+					<button className="submitbutton" type="submit">Save</button>
+				</form>
+				<Profilgamer weapon={this.state.validateOption} />
+			</div>
+
+		)
+	}
+}
+
+
+export default Weapons
+
+
+/*	<div>
 				<button onClick={this.showMenu}>
 					Selectionne ton arme
 				</button>
@@ -89,10 +180,4 @@ class Weapons extends React.Component {
 					null
 					)
 				}
-			</div>
-		)
-	}
-}
-
-
-export default Weapons
+			</div> */

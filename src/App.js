@@ -11,9 +11,10 @@ import { Grid } from '@material-ui/core';
 class App extends Component {
     render() {
         return (
-          
+
             <Grid container>
                 <Header />
+
                 <div className='containerleft'>
                     <h3>Trouver votre lieux de chasse</h3>
                     <PlacesList options={{
@@ -32,6 +33,7 @@ class App extends Component {
                     <Age />
                     <Weapons />
                 </div>
+
 
             </Grid>
         );
