@@ -79,7 +79,7 @@ class Weapons extends React.Component {
 							<button onClick={this.loadFusil}>Fusil d'assaut silencieux</button>
 						</div>
 						<div>
-							{this.state.imgSrc !== null && <img src={require(`${this.state.imgSrc}`)} className="weaponsImg"/>}
+							{this.state.imgSrc !== null && <img src={require(`${this.state.imgSrc}`)} className="weaponsImg" alt="illustration" />}
 						</div>
 						
 						
