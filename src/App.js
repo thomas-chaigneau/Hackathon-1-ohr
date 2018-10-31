@@ -12,7 +12,7 @@ class App extends Component {
     render() {
         return (
 
-            <Grid container>
+            <Grid container className="bgHome">
                 <Header />
 
                 <div className='containerleft'>

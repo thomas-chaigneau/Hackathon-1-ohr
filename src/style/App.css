@@ -16,6 +16,7 @@
     
   }
 }
+
 .containerleft {
   padding-left: 3%;
   padding-right: 3%;
@@ -89,13 +90,17 @@ h3, h6, p {
   }
 }
 .bgHome{
-  /*background: url(https://hippocketwifi.com/wp-content/uploads/2016/10/Halloween-Dublin-1000x550.jpg) no-repeat;*/
-  background-size: cover;
-  height: 100vh;
+  background: black;
 }
 .Header{
   color: orange;
   text-align: center;
   font-family: 'Halloween';
   font-size: 18px;
+}
+label, h3, h6, p{
+  color: darkorange;
+}
+h1{
+    font-size:6em;
 }
