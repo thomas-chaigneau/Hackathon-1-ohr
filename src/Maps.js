@@ -6,7 +6,7 @@ class Maps extends Component {
     state = {
         lat: 48.86092090955772,
         lng: 2.3303862391931456,
-        zoom: 12
+        zoom: 15
     }
 
     render() {
