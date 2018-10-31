@@ -1,6 +1,7 @@
 
 .containerleft {
-  padding: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
   width: 400px;
   border: 1px solid #282c34;
   margin-left: 10px;
@@ -9,6 +10,11 @@
 h3, h6, p {
   text-align: center;
 }
+
+/* h3 {
+  margin-top: -30px;
+  margin-bottom: 50px;
+} */
 
 
 

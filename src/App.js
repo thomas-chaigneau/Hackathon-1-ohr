@@ -15,8 +15,7 @@ class App extends Component {
             <Grid container>
                 <Header />
                 <div className='containerleft'>
-                    <p>Appli pour vieux qui veullent prendre leur revenche</p>
-                    <h6>Attention à vos dentiers</h6>
+                    <h3>Trouver votre lieux de chasse</h3>
                     <PlacesList options={{
                         appId: "plDJWR60RSUR",
                         apiKey: "4c54577cf398c44f9baef26dff187f04",
@@ -27,6 +26,8 @@ class App extends Component {
                         useDeviceLocation: false,
                         aroundLatLngViaIP: false
                     }} />
+
+                    <h3>Personnaliser votre profil</h3>
                     <Pseudo />
                     <Age />
                     <Weapons />
