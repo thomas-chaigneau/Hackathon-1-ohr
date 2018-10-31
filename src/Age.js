@@ -22,30 +22,33 @@ class Age extends Component {
     render() {
       return (
         <div>
-              <form onSubmit={this.handleFormSubmit}>
-                <div>
-                  <label>
-                    <input type="radio" value="Septuagénaire" checked={this.state.selectedOption === 'Septuagénaire'} onChange={this.handleOptionChange} />
-                    Septuagénaire
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <input type="radio" value="Octogénaires" checked={this.state.selectedOption === 'Octogénaires'} onChange={this.handleOptionChange}/>
-                    Octogénaires
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <input type="radio" value="Nonagénaire" checked={this.state.selectedOption === 'Nonagénaire'} onChange={this.handleOptionChange}/>
-                    Nonagénaire
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <input type="radio" value="Centenaires" checked={this.state.selectedOption === 'Centenaires'} onChange={this.handleOptionChange}/>
-                    Centenaires
-                  </label>
+              <form onSubmit={this.handleFormSubmit} className="ageForm">
+                <div className="ageContainer">
+                  <h3>Votre âge</h3>
+                  <div>
+                    <label>
+                      <input type="radio" value="Septuagénaire" checked={this.state.selectedOption === 'Septuagénaire'} onChange={this.handleOptionChange} />
+                      Septuagénaire
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type="radio" value="Octogénaires" checked={this.state.selectedOption === 'Octogénaires'} onChange={this.handleOptionChange}/>
+                      Octogénaires
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type="radio" value="Nonagénaire" checked={this.state.selectedOption === 'Nonagénaire'} onChange={this.handleOptionChange}/>
+                      Nonagénaire
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type="radio" value="Centenaires" checked={this.state.selectedOption === 'Centenaires'} onChange={this.handleOptionChange}/>
+                      Centenaires
+                    </label>
+                  </div>
                 </div>
                 <button className="submitbutton" type="submit">Save</button>
               </form>

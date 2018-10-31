@@ -81,62 +81,64 @@ class Weapons extends React.Component {
 
 
 			<div>
-				<form onSubmit={this.handleFormSubmit}>
-					<div>
-						<label>
-							<input type="radio" value="Sable" checked={this.state.selectedOption === 'Sable'} onChange={this.handleOptionChange} />
-							Sable
-                  		</label>
+				<form onSubmit={this.handleFormSubmit} className="weaponForm">
+					<div className="weaponContainer">
+						<h3>Votre arme</h3>
+						<div>
+							<label>
+								<input type="radio" value="Sable" checked={this.state.selectedOption === 'Sable'} onChange={this.handleOptionChange} />
+								Sable
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" value="Marionette" checked={this.state.selectedOption === 'Marionette'} onChange={this.handleOptionChange} />
+								Marionette
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" value="Couteau à beurre" checked={this.state.selectedOption === 'Couteau à beurre'} onChange={this.handleOptionChange} />
+								Couteau à beurre
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" value="Lance-pierres" checked={this.state.selectedOption === 'Lance-pierres'} onChange={this.handleOptionChange} />
+								Lance-pierres
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" value="Martinet" checked={this.state.selectedOption === 'Martinet'} onChange={this.handleOptionChange} />
+								Martinet
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" value="Dague" checked={this.state.selectedOption === 'Dague'} onChange={this.handleOptionChange} />
+								Dague
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" value="Epée" checked={this.state.selectedOption === 'Epée'} onChange={this.handleOptionChange} />
+								Epée
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" value="Piège à loup" checked={this.state.selectedOption === 'Piège à loup'} onChange={this.handleOptionChange} />
+								Piège à loup
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" value="Fusil d'assaut" checked={this.state.selectedOption === 'Fusil d\'assaut'} onChange={this.handleOptionChange} />
+								Fusil d'assaut
+							</label>
+						</div>
 					</div>
-					<div>
-						<label>
-							<input type="radio" value="Marionette" checked={this.state.selectedOption === 'Marionette'} onChange={this.handleOptionChange} />
-							Marionette
-                  		</label>
-					</div>
-					<div>
-						<label>
-							<input type="radio" value="Couteau à beurre" checked={this.state.selectedOption === 'Couteau à beurre'} onChange={this.handleOptionChange} />
-							Couteau à beurre
-                  		</label>
-					</div>
-					<div>
-						<label>
-							<input type="radio" value="Lance-pierres" checked={this.state.selectedOption === 'Lance-pierres'} onChange={this.handleOptionChange} />
-							Lance-pierres
-                  		</label>
-					</div>
-					<div>
-						<label>
-							<input type="radio" value="Martinet" checked={this.state.selectedOption === 'Martinet'} onChange={this.handleOptionChange} />
-							Martinet
-                  		</label>
-					</div>
-					<div>
-						<label>
-							<input type="radio" value="Dague" checked={this.state.selectedOption === 'Dague'} onChange={this.handleOptionChange} />
-							Dague
-                  		</label>
-					</div>
-					<div>
-						<label>
-							<input type="radio" value="Epée" checked={this.state.selectedOption === 'Epée'} onChange={this.handleOptionChange} />
-							Epée
-                  		</label>
-					</div>
-					<div>
-						<label>
-							<input type="radio" value="Piège à loup" checked={this.state.selectedOption === 'Piège à loup'} onChange={this.handleOptionChange} />
-							Piège à loup
-                  		</label>
-					</div>
-					<div>
-						<label>
-							<input type="radio" value="Fusil d'assaut" checked={this.state.selectedOption === 'Fusil d\'assaut'} onChange={this.handleOptionChange} />
-							Fusil d'assaut
-                  		</label>
-					</div>
-
 					<button className="submitbutton" type="submit">Save</button>
 				</form>
 				<Profilgamer weapon={this.state.validateOption} />
