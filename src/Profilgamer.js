@@ -1,13 +1,14 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import './style/Profilgamer.css';
 
 class Profilgamer extends Component {
     render() {
+
         return (
             <div className='profilgamer-container' >
                 <img src="https://svgsilh.com/svg_v2/152866.svg" alt="avatar du personage" />
-                <p>{this.props.pseudo || 'My Pseudo'}</p>
-                <p>{this.props.category || 'no category' }</p>
+                <p>{this.props.pseudo !== '' ? this.props.pseudo : 'My Pseudo'}</p><br />
+                <p>{this.props.category !== '' ? this.props.category : 'No category'}</p>
             </div>
         );
     };
