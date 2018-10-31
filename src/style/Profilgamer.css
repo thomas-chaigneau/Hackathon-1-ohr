@@ -1,8 +1,9 @@
 .profilgamer-container {
     position: absolute;
     left: 600px;
-    top: 480px;
-    padding: 3%;
+    top: 80px;
+    padding-left: 3%;
+    padding-right: 3%;
     width: 685px;
     border: 1px solid #282c34;
 }
