@@ -8,5 +8,4 @@ const Header = () => {
         </Grid>
     )
 }
-
-export default Header
+export default Header;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import './Map.css';
+import './style/Map.css';
 
 class Maps extends Component {
     state = {
@@ -10,6 +10,8 @@ class Maps extends Component {
     }
 
     render() {
+        
+
         const coordonate = this.props.huntplace
         const position = [coordonate.fields.geo_point_2d[0], coordonate.fields.geo_point_2d[1]]
         return (

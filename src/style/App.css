@@ -3,11 +3,14 @@
   padding: 3%;
   width: 400px;
   border: 1px solid #282c34;
+  margin-left: 10px;
 }
 
 h3, h6, p {
   text-align: center;
 }
+
+
 
 .form {
   border: 1px solid #b6b7bd;

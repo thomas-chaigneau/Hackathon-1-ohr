@@ -1,0 +1,17 @@
+.profilgamer-container {
+    position: absolute;
+    left: 600px;
+    top: 480px;
+    padding: 3%;
+    width: 685px;
+    border: 1px solid #282c34;
+}
+
+p {
+    text-align: left;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}

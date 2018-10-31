@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Profilgamer from './Profilgamer'
+
 
 
 class Pseudo extends Component {
     constructor(props) {
         super(props);
-        this.state = {name: ""};
+        this.state = {name: "",
+                      pseudo: ""};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,8 +18,8 @@ class Pseudo extends Component {
       }
     
     handleSubmit(event) {
-        alert('You are' + this.state.name + '????');
-        event.preventDefault();
+      this.setState({pseudo: this.state.name})
+      event.preventDefault();
       }
     
       render() {
@@ -32,9 +35,13 @@ class Pseudo extends Component {
                     placeholder="    Ton PSeudo de Guerre Vieille PEaux"/>
                 <input className="submitbutton" type="submit" value="Envoie le paté Pépé" />
               </form>
-          <h1>{this.state.name}</h1></div>
+              <Profilgamer pseudo={this.state.pseudo}/>
+            </div>
+
         );
       }
     }
+
+    // Pseudo.defaultProps = {pseudo: 'Gammmmmeur'};
 
 export default Pseudo;

@@ -18,7 +18,7 @@ class Chantier extends Component {
     }
 
     render() {
-        if(this.props.arrondissement === '') return (<div>place is comming....</div>)
+        if(this.props.arrondissement === '') return <div></div>
         else {
             let AllSite = this.state.localisation
             let Sitebyborough = AllSite.filter(item => item.fields.cp_arrondissement === parseInt(this.props.arrondissement))

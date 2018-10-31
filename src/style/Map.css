@@ -1,0 +1,10 @@
+.Map-container{
+    position: absolute;
+    left: 600px;
+    top: 80px;
+}
+
+.leaflet-container{
+    height: 380px;
+    width: 780px;
+}
